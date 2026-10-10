@@ -1,0 +1,1000 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Raj Cricket | Cricket Analysis & League Updates</title>
+<meta name="description" content="Raj Cricket -- independent cricket analysis, match discussions and global T20 league updates.">
+<meta name="theme-color" content="#111111">
+
+<style>
+:root {
+  --bg: #101010;
+  --panel: #1a1a1a;
+  --panel2: #222222;
+  --accent: #ff4938;
+  --accent2: #ff7048;
+  --text: #f8f8f8;
+  --muted: #b5b5b5;
+  --border: #343434;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.8),
+    transparent
+  );
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-label {
+  font-size: 11px;
+  color: #dddddd;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 760px;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.94) 0%,
+      rgba(0,0,0,.76) 47%,
+      rgba(0,0,0,.22) 100%
+    ),
+    linear-gradient(
+      0deg,
+      var(--bg),
+      transparent 35%
+    ),
+    url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=85")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 760px;
+  padding-top: 95px;
+  padding-bottom: 65px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border: 1px solid rgba(255,73,56,.55);
+  border-radius: 4px;
+  background: rgba(255,73,56,.10);
+  color: #ff786a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(45px, 8vw, 91px);
+  line-height: 1;
+  letter-spacing: -3px;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.hero p {
+  max-width: 600px;
+  color: #d1d1d1;
+  font-size: clamp(16px, 2vw, 19px);
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 22px;
+  min-height: 54px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .5px;
+  transition: .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.telegram {
+  background: var(--accent);
+  color: white;
+  border: 1px solid var(--accent);
+}
+
+.whatsapp {
+  background: rgba(15,15,15,.75);
+  color: white;
+  border: 1px solid #777;
+}
+
+.whatsapp:hover {
+  border-color: var(--accent);
+}
+
+.hero-note {
+  margin-top: 23px;
+  font-size: 12px;
+  color: #bdbdbd;
+}
+
+/* BRAND STATS */
+
+.stats {
+  background: #181818;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.stat {
+  text-align: center;
+  padding: 27px 12px;
+  border-right: 1px solid var(--border);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat strong {
+  display: block;
+  font-size: 20px;
+  color: var(--accent2);
+}
+
+.stat span {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+}
+
+/* GENERAL SECTIONS */
+
+section:not(.hero) {
+  padding: 85px 0;
+}
+
+.kicker {
+  color: var(--accent2);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  max-width: 730px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin-bottom: 15px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* FEATURED LEAGUES */
+
+.featured {
+  background: #101010;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.feature-card {
+  min-height: 340px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0,0,0,.96),
+    rgba(0,0,0,.05)
+  );
+}
+
+.feature-wbbl {
+  background-image:
+    url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1100&q=85");
+}
+
+.feature-ipl {
+  background-image:
+    url("https://images.unsplash.com/photo-1593766827228-8737b4cd147b?auto=format&fit=crop&w=1100&q=85");
+}
+
+.feature-content {
+  position: relative;
+  padding: 27px;
+}
+
+.feature-content span {
+  color: #ff806d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.feature-content h3 {
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.2;
+  margin: 9px 0;
+}
+
+.feature-content p {
+  color: #d0d0d0;
+  font-size: 13px;
+}
+
+/* SPECIAL FOCUSED LEAGUES */
+
+.focused-leagues {
+  background: #171717;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.league-category {
+  font-size: 24px;
+  margin: 38px 0 21px;
+  padding-left: 14px;
+  border-left: 4px solid var(--accent);
+}
+
+.league-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 21px;
+}
+
+.league-card {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #202020;
+  border: 1px solid #333;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.league-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.league-card img {
+  display: block;
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  background: #292929;
+}
+
+.league-info {
+  padding: 20px;
+}
+
+.league-info .country {
+  color: var(--accent2);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.league-info h4 {
+  font-size: 19px;
+  line-height: 1.35;
+  margin: 9px 0;
+}
+
+.league-info p {
+  font-size: 13px;
+  color: #bcbcbc;
+  line-height: 1.7;
+}
+
+/* ABOUT */
+
+.about {
+  background: #101010;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.about-image {
+  min-height: 390px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.20),
+      rgba(0,0,0,.05)
+    ),
+    url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1100&q=85")
+    center/cover no-repeat;
+}
+
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.about-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.about-list li {
+  font-size: 14px;
+  color: #e3e3e3;
+}
+
+.about-list span {
+  color: var(--accent2);
+  margin-right: 9px;
+}
+
+/* COMMUNITY CTA */
+
+.community {
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,73,56,.10),
+      transparent 65%
+    ),
+    #121212;
+}
+
+.community .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.community .buttons {
+  justify-content: center;
+}
+
+.community-note {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: #a5a5a5;
+  font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #080808;
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-brand {
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.footer-brand span {
+  color: var(--accent);
+}
+
+footer p {
+  color: #969696;
+  font-size: 12px;
+}
+
+.disclaimer {
+  border-top: 1px solid #292929;
+  margin-top: 17px;
+  padding-top: 17px;
+  color: #888;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+  .league-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-grid {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 760px;
+    background-position: 58% center;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  .nav-label {
+    font-size: 9px;
+    letter-spacing: .7px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 18px;
+  }
+
+  .stat:last-child {
+    border-bottom: none;
+  }
+
+  section:not(.hero) {
+    padding: 65px 0;
+  }
+
+  .featured-grid,
+  .about-grid,
+  .league-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 285px;
+  }
+
+  .league-card img {
+    height: 220px;
+  }
+
+  .about-image {
+    min-height: 280px;
+    order: 2;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">RAJ<span>CRICKET</span></a>
+    <div class="nav-label">Independent Cricket Analysis</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="badge">WELCOME TO RAJ CRICKET</div>
+
+        <h1>
+          CRICKET.<br>
+          BEYOND THE<br>
+          <span>SCOREBOARD.</span>
+        </h1>
+
+        <p>
+          Explore cricket discussions, tournament updates and
+          independent match analysis from Raj Cricket.
+          Stay connected with the global cricket community.
+        </p>
+
+        <div class="buttons">
+          <a
+            class="btn telegram"
+            href="https://t.me/+qW--djIJZD03ZWJl"
+            target="_blank"
+            rel="noopener noreferrer">
+            JOIN TELEGRAM CHANNEL ↗
+          </a>
+
+          <a
+            class="btn whatsapp"
+            href="https://wa.me/918306559406?text=Hi%20Raj%20Cricket"
+            target="_blank"
+            rel="noopener noreferrer">
+            JOIN WHATSAPP ↗
+          </a>
+        </div>
+
+        <div class="hero-note">
+          Cricket Analyst · Tournament Coverage · Match Discussions
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STATS -->
+  <div class="stats">
+    <div class="container stats-grid">
+
+      <div class="stat">
+        <strong>Since 1992</strong>
+        <span>Raj Cricket</span>
+      </div>
+
+      <div class="stat">
+        <strong>Global Leagues</strong>
+        <span>Cricket Coverage</span>
+      </div>
+
+      <div class="stat">
+        <strong>Cricket Analyst</strong>
+        <span>Independent Commentary</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FEATURED LEAGUES -->
+  <section class="featured">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="kicker">FEATURED TOURNAMENTS</div>
+        <h2>Cricket in the spotlight.</h2>
+        <p>
+          Discover featured women's and men's competitions
+          through cricket updates and independent analysis.
+        </p>
+      </div>
+
+      <div class="featured-grid">
+
+        <article class="feature-card feature-wbbl">
+          <div class="feature-content">
+            <span>WOMEN'S T20 CRICKET</span>
+            <h3>Women's Big Bash League</h3>
+            <p>League coverage, team discussions and tournament updates.</p>
+          </div>
+        </article>
+
+        <article class="feature-card feature-ipl">
+          <div class="feature-content">
+            <span>INDIAN T20 CRICKET</span>
+            <h3>Indian Premier League</h3>
+            <p>Team performances, match discussions and cricket analysis.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL 12 SPECIAL FOCUSED LEAGUES -->
+  <section class="focused-leagues" id="focused-leagues">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="kicker">SPECIAL FOCUSED LEAGUES</div>
+        <h2>Leagues from around the world.</h2>
+        <p>
+          Explore major women's franchise competitions and
+          global men's T20 leagues in one place.
+        </p>
+      </div>
+
+      <h3 class="league-category">Women's Franchise Leagues</h3>
+
+      <div class="league-grid">
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Women's Premier League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">India</span>
+            <h4>Women's Premier League (WPL)</h4>
+            <p>Women's franchise T20 competition based in India.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Women's Big Bash League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Australia</span>
+            <h4>Women's Big Bash League (WBBL)</h4>
+            <p>Australia's women's franchise T20 competition.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1593766827228-8737b4cd147b?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Women's Caribbean Premier League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Caribbean</span>
+            <h4>Women's Caribbean Premier League (WCPL)</h4>
+            <p>Women's franchise T20 cricket in the Caribbean.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="league-category">Major Global Men's T20 Leagues</h3>
+
+      <div class="league-grid">
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Indian Premier League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">India</span>
+            <h4>Indian Premier League (IPL)</h4>
+            <p>India's major franchise T20 cricket competition.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Big Bash League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Australia</span>
+            <h4>Big Bash League (BBL)</h4>
+            <p>Australia's domestic franchise T20 league.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- SA20"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">South Africa</span>
+            <h4>SA20</h4>
+            <p>South Africa's franchise T20 competition.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1512719994953-eabf50895df7?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Pakistan Super League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Pakistan</span>
+            <h4>Pakistan Super League (PSL)</h4>
+            <p>Pakistan's professional franchise T20 league.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Caribbean Premier League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Caribbean</span>
+            <h4>Caribbean Premier League (CPL)</h4>
+            <p>Caribbean franchise cricket and T20 match coverage.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- International League T20"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">United Arab Emirates</span>
+            <h4>International League T20 (ILT20)</h4>
+            <p>The UAE's franchise T20 competition.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Bangladesh Premier League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Bangladesh</span>
+            <h4>Bangladesh Premier League (BPL)</h4>
+            <p>Bangladesh's professional franchise T20 league.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1471295253337-3ceaaedca402?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Lanka Premier League"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">Sri Lanka</span>
+            <h4>Lanka Premier League (LPL)</h4>
+            <p>Sri Lanka's franchise T20 competition.</p>
+          </div>
+        </article>
+
+        <article class="league-card">
+          <img
+            src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=85"
+            alt="Cricket -- Major League Cricket"
+            loading="lazy">
+          <div class="league-info">
+            <span class="country">United States</span>
+            <h4>Major League Cricket (MLC)</h4>
+            <p>Professional franchise cricket in the United States.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT RAJ CRICKET -->
+  <section class="about">
+    <div class="container about-grid">
+
+      <div class="about-image"
+           role="img"
+           aria-label="Cricket ground"></div>
+
+      <div class="about-copy">
+        <div class="section-heading">
+          <div class="kicker">ABOUT RAJ CRICKET</div>
+          <h2>More than just the scoreboard.</h2>
+        </div>
+
+        <p>
+          Raj Cricket is a cricket-focused community for fans
+          interested in match discussions, player performances,
+          tournament news and independent cricket analysis.
+        </p>
+
+        <p>
+          Our focus is on the game, its teams, its players and
+          the discussions that make cricket exciting.
+        </p>
+
+        <ul class="about-list">
+          <li><span>✓</span> Cricket analysis and commentary</li>
+          <li><span>✓</span> Global league coverage</li>
+          <li><span>✓</span> Match and team discussions</li>
+          <li><span>✓</span> Cricket community updates</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TELEGRAM + WHATSAPP -->
+  <section class="community">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="kicker">JOIN OUR COMMUNITY</div>
+        <h2>Stay connected with Raj Cricket.</h2>
+        <p>
+          Choose your preferred platform to join the cricket
+          community and follow updates.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <a
+          class="btn telegram"
+          href="https://t.me/+qW--djIJZD03ZWJl"
+          target="_blank"
+          rel="noopener noreferrer">
+          JOIN TELEGRAM CHANNEL ↗
+        </a>
+
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/918306559406?text=Hi%20Raj%20Cricket"
+          target="_blank"
+          rel="noopener noreferrer">
+          JOIN WHATSAPP ↗
+        </a>
+      </div>
+
+      <p class="community-note">
+        Cricket analysis represents independent opinions and does not
+        guarantee match results or financial outcomes. Please follow
+        applicable laws and platform rules.
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-inner">
+      <div class="footer-brand">RAJ<span>CRICKET</span></div>
+      <p>© <span id="year"></span> Raj Cricket. All rights reserved.</p>
+    </div>
+
+    <div class="disclaimer">
+      Raj Cricket is an independent cricket community and is not
+      affiliated with or endorsed by the IPL, Women's Big Bash League,
+      or any cricket governing body. Tournament names are used to
+      identify the competitions discussed. Cricket analysis is
+      commentary, not a guarantee of future outcomes.
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
